@@ -25,6 +25,9 @@ tl.from("a", {
 tl.from(".centerText", {
     opacity: 0,
 });
+tl.from(".centerText2", {
+    opacity: 0,
+});
 tl.to(".scrollText", {
     x: -2300,
     scrollTrigger: {
