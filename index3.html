@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GSAP</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body style="background-color: black;">
+    <div>
+        <svg class="string" width="1000" height="500" xmlns=" http://www.w3.org/2000/svg">
+            <path d="M 10 250 Q 500 250 990 250" stroke="white" fill="transparent" />
+        </svg>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+        integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./assets/js/app.js"></script>
+    <script>
+        // index3.html js
+
+        var path = "M 10 250 Q 500 250 990 250";
+        var finalPath = "M 10 250 Q 500 250 990 250";
+
+        var string = document.querySelector(".string");
+        string.addEventListener("mousemove", (dets) => {
+            var path = `M 10 250 Q ${dets.x} ${dets.y} 990 250`;
+            gsap.to("svg path", {
+                attr: { d: path }
+            })
+        })
+        string.addEventListener("mouseleave", (dets) => {
+            gsap.to("svg path", {
+                attr: { d: finalPath },
+                ease: "elastic.out(1.5,0.2)",
+                duration: 0.5,
+            })
+        })
+
+
+    </script>
+</body>
+
+</html>

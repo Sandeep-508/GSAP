@@ -31,9 +31,10 @@ tl.from(".centerText2", {
 tl.to(".scrollText", {
     x: -2300,
     scrollTrigger: {
-        trigger: ".scrollText",
-        start: "2% 0%",
-        end: "bottom 0%",
+        trigger: ".parentPin",
+        start: "top 0%",
+        end: "top -100%",
+        markers: true,
         scrub: true,
         pin: true,
     }
