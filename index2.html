@@ -10,33 +10,41 @@
 
 <body>
     <div
-        style="min-height: 100vh; background-image: url(./assets/images/night-sky-stars-clouds-scenery-landscape-anime-digital-art-4k-wallpaper-uhdpaper.com-7680i.jpg); background-size: 100% 100%; background-position: center; background-repeat: no-repeat;background-attachment: fixed;">
+        style="min-height: 100vh;overflow: hidden; position: relative; background-image: url(./assets/images/night-sky-stars-clouds-scenery-landscape-anime-digital-art-4k-wallpaper-uhdpaper.com-7680i.jpg); background-size: 100% 100%; background-position: center; background-repeat: no-repeat;background-attachment: fixed;">
         <nav
             style="max-width: 1536px; margin-left: auto; margin-right: auto; padding-left: 20px; padding-right: 20px; display: flex; align-items: center; justify-content: space-between; background-color: rgba(245, 245, 245, 0.173);">
             <div style="font-size: 30px; color: white;" class="text1">LOGO</div>
-            <label for="menu"
+            <label
                 style="width: 40px; height: 30px; display: flex;align-items: center;justify-content: space-between; flex-direction: column;"
                 class="menuicon">
                 <span class="line"></span>
                 <span class="line"></span>
                 <span class="line"></span>
             </label>
-            <div style="display: flex; align-items: center; justify-content: center; gap: 20px;" class="maxLgView">
-                <a href="#" style="color: white;">How it Works</a>
-                <a href="#" style="color: white;">About Us</a>
-                <a href="#" style="color: white;">Contact us</a>
-                <a href="#" style="color: white;">Get a Quote</a>
+            <div style="display: flex; align-items: start; justify-content:center; gap: 20px; padding-left: 40px; flex-direction: column;"
+                class="maxLgView">
+                <label
+                    style="width: 40px; height: 30px; display: flex;align-items: center;justify-content: space-between; flex-direction: column; position: absolute; top: 10%;right: 5%;"
+                    class="cross">
+                    <span class="line" style="transform: rotate(45deg); top: 13px; position: absolute;"></span>
+                    <span class="line" style="transform: rotate(135deg); bottom: 13px; position: absolute;"></span>
+                </label>
+                <a href="#work" style="color: white;" class="bookmark">How it Works</a>
+                <a href="#" style="color: white;" class="bookmark">About Us</a>
+                <a href="#" style="color: white;" class="bookmark">Contact us</a>
+                <a href="#" style="color: white;" class="bookmark">Get a Quote</a>
             </div>
         </nav>
-        <div>
+        <!-- <div>
             <p style="text-align: center; font-size: 100px; color: white; padding-top: 100px;" class="centerText">Scroll
                 Down</p>
             <p style="text-align: center; font-size: 100px; color: white; padding-top: 100px;" class="centerText2">
                 Scroll
                 Trigger GSAP</p>
-        </div>
+        </div> -->
     </div>
-    <div style="overflow-x: hidden; background: black; max-width: 1536px; margin-left: auto;margin-right: auto;" class="parentPin">
+    <div style="overflow-x: hidden; background: black; max-width: 1536px; margin-left: auto;margin-right: auto; min-height: 100vh;"
+        id="work" class="parentPin">
         <p style="font-size: 600px; color: white;" class="scrollText">EXPERIENCES</p>
     </div>
     <div style="position: fixed; bottom: 20px; right: 20px; transform: rotate(180deg); border-radius: 50%; background: white; width: 50px; height: 50px;"

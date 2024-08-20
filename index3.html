@@ -8,11 +8,20 @@
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
-<body style="background-color: black;">
+<body style="background-color: white; min-height: 100vh;">
     <div>
         <svg class="string" width="1000" height="500" xmlns=" http://www.w3.org/2000/svg">
-            <path d="M 10 250 Q 500 250 990 250" stroke="white" fill="transparent" />
+            <path d="M 10 250 Q 500 250 990 250" stroke="black" fill="transparent" />
         </svg>
+    </div>
+    <div class="main" style="position: fixed; z-index: 9; top: 0; left: 0;">
+        <div class="cursor"></div>
+    </div>
+    <div style="background-color: white; position: relative; width: 500px; height: 500px;" class="imageDiv">
+        <div class="overlay" style="z-index: 10;"></div>
+        <div
+            style="width: 100%; position: relative; z-index: 4; height: 100%; background-image: url(./assets/images/night-sky-stars-clouds-scenery-landscape-anime-digital-art-4k-wallpaper-uhdpaper.com-7680i.jpg); background-size: cover; margin-left: auto;margin-right: auto;">
+        </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
         integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
@@ -39,6 +48,31 @@
             })
         })
 
+        var main = document.querySelector(".main");
+        window.addEventListener("mousemove", (dets) => {
+            var xValue = dets.x;
+            var yValue = dets.y;
+            // console.log(dets)
+            gsap.to(".main", {
+                x: xValue,
+                y: yValue,
+                ease: "back.out(3)"
+            })
+        })
+
+        var image = document.querySelector(".imageDiv");
+        image.addEventListener("mouseenter", () => {
+            main.innerHTML = "View More"
+            gsap.to(".main", {
+                scale: 1.5,
+            })
+        })
+        image.addEventListener("mouseleave", () => {
+            main.innerHTML = ""
+            gsap.to(".main", {
+                scale: 1,
+            })
+        })
 
     </script>
 </body>

@@ -12,20 +12,50 @@ gsap.fromTo(".box2",
 // Timeline animations
 gsap.registerPlugin(ScrollTrigger)
 var tl = gsap.timeline();
+var ol = gsap.timeline();
 
 tl.from(".text1", {
     y: -40,
     duration: 0.5,
 });
-tl.from("a", {
-    y: -40,
+
+var menuicon = document.querySelector(".menuicon")
+var cross = document.querySelector(".cross")
+var maxLgView = document.querySelector(".maxLgView")
+ol.pause();
+ol.to(".maxLgView", {
+    right: 0,
+    duration: 0.9,
+})
+ol.from("a", {
+    x: 150,
+    opacity: 0,
     duration: 0.5,
     stagger: 0.3,
 });
+ol.from(".cross", {
+    opacity: 0,
+})
+menuicon.addEventListener("click", () => {
+    ol.play()
+})
+cross.addEventListener("click", () => {
+    ol.reverse()
+})
+let bookmark = document.querySelectorAll(".bookmark")
+bookmark.forEach((obj) => {
+    obj.addEventListener("click", () => {
+        ol.timeScale(4).reverse().then(() => {
+            ol.timeScale(1).reverse();
+        })
+    })
+})
 tl.from(".centerText", {
+    delay: 2,
     opacity: 0,
 });
 tl.from(".centerText2", {
+    delay: 2,
     opacity: 0,
 });
 tl.to(".scrollText", {
@@ -34,7 +64,7 @@ tl.to(".scrollText", {
         trigger: ".parentPin",
         start: "top 0%",
         end: "top -100%",
-        markers: true,
+        // markers: true,
         scrub: true,
         pin: true,
     }
